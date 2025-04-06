@@ -25,6 +25,7 @@ cd food_ordering_api
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
 
 ✅ Configure .env file
 create a .env file at the root:
