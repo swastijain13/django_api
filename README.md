@@ -27,27 +27,25 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-###
-✅ Configure .env file
-create a .env file at the root:
+### ✅ Configure .env file
+- create a .env file at the root:
 
-SECRET_KEY=your_django_secret_key
-DEBUG=True
+- SECRET_KEY=your_django_secret_key
+- DEBUG=True
 
-# Database
-NAME = your_database_name
-DB_USER = your_mysql_username
-PASSWORD = your_mysql_password
-HOST = localhost
-PORT = 3306
-
-
-# Mysql Setup
-CREATE DATABASE food_ordering;
+### Database
+- NAME = your_database_name
+- DB_USER = your_mysql_username
+- PASSWORD = your_mysql_password
+- HOST = localhost
+- PORT = 3306
 
 
-# Run Migrations and Start Server
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-###
+### Mysql Setup
+- CREATE DATABASE food_ordering;
+
+
+### Run Migrations and Start Server
+- python manage.py makemigrations
+- python manage.py migrate
+- python manage.py runserver
