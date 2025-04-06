@@ -41,11 +41,11 @@ HOST = localhost
 PORT = 3306
 
 
-#Mysql Setup
+# Mysql Setup
 CREATE DATABASE food_ordering;
 
 
-#Run Migrations and Start Server
+# Run Migrations and Start Server
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
