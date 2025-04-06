@@ -27,6 +27,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+###
 ✅ Configure .env file
 create a .env file at the root:
 
@@ -49,3 +50,4 @@ CREATE DATABASE food_ordering;
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
+###
