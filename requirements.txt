@@ -1,0 +1,13 @@
+Django>=4.2
+djangorestframework
+djangorestframework-simplejwt
+mysqlclient
+pytest
+pytest-django
+pytest-cov
+factory_boy
+Faker
+drf-yasg
+pylint
+coverage
+python-decouple
