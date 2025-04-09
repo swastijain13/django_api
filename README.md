@@ -20,8 +20,8 @@ This is a backend API for a food ordering system. It supports **user authenticat
 ##  Setup Locally
 
 ```bash
-git clone https://github.com/swastijain13/food_ordering_api.git
-cd food_ordering_api
+git clone https://github.com/swastijain13/django_api.git
+cd django_api
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
