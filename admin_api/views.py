@@ -1,5 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+import jwt
 from rest_framework import status
 from orders.models import User, MenuItem, Order
 from orders.serializers import UserSerializer, MenuItemSerializer, OrderSerializer
@@ -9,8 +10,6 @@ from orders.decorators import require_auth
 @api_view(["GET"])
 @require_auth
 def get_users(request):
-    data = request.data
-    print(data)
     if not request.is_admin:
         return Response(
             {

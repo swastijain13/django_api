@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("SECRET_KEY")
+SECRET_KEY = "django-insecure-v8tzdd7m*=^5^cki%-otk&94slnh#4pr=qn)blbqcvc3vf!%i&"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
@@ -81,7 +81,7 @@ WSGI_APPLICATION = "food_ordering_api.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-print("DB USER:", config("USER"))
+# print("DB USER:", config("DB_USER"))
 
 DATABASES = {
     "default": {
