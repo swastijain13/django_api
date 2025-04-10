@@ -47,12 +47,18 @@ PORT = 3306
 CREATE DATABASE food_ordering;
 ```
 
+### To create admin : create superuser with these credentials
+```
+python manage.py createsuperuser
+User : admin
+Password : admin
+```
 
-### Run Migrations and Start Server
+
+### Run Migrations
 ```
  python manage.py makemigrations
  python manage.py migrate
- python manage.py createsuperuser
 ```
 
 ### Run the server
@@ -119,6 +125,25 @@ Use POST method with:
 }
 ```
 
+#### To get admin's access token:
+```
+http://127.0.0.1:8000/api/token
+```
+Use POST method with:
+```json
+{
+ "username" : "admin"
+ "password" : "admin"
+}
+```
+**Response**
+```json
+{
+  "refresh_token" : "refresh_token",
+  "access_token" : "access_token"
+}
+```
+
 #### **Logout**
 
 ##### open in browser**:
@@ -168,6 +193,23 @@ curl -X POST http://127.0.0.1:8000/orders/item/<menu_item_id>/order/ \
 }
 ```
 
+#### **Cancel an order**
+Run curl command in terminal :
+```
+curl -X DELETE http://127.0.0.1:8000/orders/item/<menu_item_id>/cancel/ \
+  -H "Authorization: Bearer <ACCESS_TOKEN>"
+```
+**Response:**
+```json
+   {
+       "status": "success",
+       "message": "Order cancelled successfully",
+       "data": {
+           "refund_amount": "order amount",
+       },
+   }
+```
+
 ---
 ### **Admin Endpoints** *(Admin + JWT Authentication Required)*
 #### **Add an item in menu**
@@ -199,12 +241,12 @@ curl -X DELETE http://127.0.0.1:8000/admin_api/items/<item_id>/ \
 ```
 #### **View all users**
 ```
-curl -X DELETE http://127.0.0.1:8000/admin_api/users/ \
+curl -X GET http://127.0.0.1:8000/admin_api/users/ \
   -H "Authorization: Bearer <ACCESS_TOKEN>"
 ```
 #### **View all orders**
 ```
-curl -X DELETE http://127.0.0.1:8000/admin_api/orders/ \
+curl -X GET http://127.0.0.1:8000/admin_api/orders/ \
   -H "Authorization: Bearer <ACCESS_TOKEN>"
 ```
 ---
